@@ -281,6 +281,8 @@ In order to understand the incidence correspondence of the 27 lines on a smooth 
 Any smooth cubic surface $X$ in $\P^3$ over an algebraically closed field is isomorphic to the blow-up of $\P^2$ at six points $p_1,\ldots,p_6$ where no three of the $p_i$ are colinear and all six are not on a cubic.
 \end{theorem}
 
+\deej{ADD PROOF}
+
 Using this fact we see two things:
 \begin{enumerate}[(i)]
 \item the incidence graph of lines on a smooth cubic surface in $\P^3$ (over an algebraically closed field) is well-defined i.e. does not depend on our choice of $X$;
@@ -294,13 +296,17 @@ In particular, from this picture above that our 27 lines come in three flavors:
 \item one line $\ell_{i,j}$ coming from the strict transform of the line between $p_i$ and $p_j$
 \item one line $C_i$ coming from strict transform of the unique plane conic going through $p_1,\ldots,\hat{p}_i,\ldots,p_6$.
 \end{enumerate}
-(Note we will often abuse notation and use the same symbol for a curve and its strict transform.) Shift towards trying to compute the incidence graph $G$ of these lines recall the strict transforms of two curves $C_1, C_2\subset\P^2$ will intersect in the blow-up $X$ if and only if $C_1$ and $C_2$ have a point of intersection outside of $\{p_1,\ldots,p_6\}$. \deej{NEDED}
+(Note we will often abuse notation and use the same symbol for a curve and its strict transform.) Shift towards trying to compute the incidence graph $G$ of these lines the key fact is the following exercise:
 
-For example, in the plane two lines $\ell_{i,j}$ and $\ell_{s,t}$ intersect in exactly one point. Moreover, the intersection $\{i,j\}\cap \{s,t\}$ is non-empty if and only if this point of intersection is one of the $p_i$. Therefore, we see that:
+\begin{ex}
+Let $C_1$ and $C_2$ be curves in $\P^2$ and $X$ be the cubic surface obtained from blowing $\P^2$ at six general points $\{p_1,\ldots,p_6\}$. Show the strict transforms of $C_1$ and $C_2$ intersect on $X$ if and only if $C_1$ and $C_2$ have a point of intersection outside of $\{p_1,\ldots,p_6\}$.
+\end{ex}
+
+In particular, this exercise says that in order to understand intersections on $X$ it is enough to think about intersections on $\P^2$. For example, in the plane the two lines $\ell_{i,j}$ and $\ell_{s,t}$ intersect in exactly one point. Moreover, the intersection $\{i,j\}\cap \{s,t\}$ is non-empty if and only if this point of intersection is one of the $p_i$. Therefore, we see that:
 \[
 \ell_{i,j}\cap \ell_{s,t}=
 \]
-Similarly, 
+Similarly, we know that the line $\ell_{i,j}$ and the conic $C_{k}$ intersect in precisely two points. (We shall assume the points $p_i$ have been chosen sufficiently generally so that none of the lines of interest are tangent to any of the conics.) \deej{An example here might be cool.}
 
  if two curves in $\P^2$ intersect in a point other than $\{p_1,\ldots,p_6\}$.Coding these relations into Macaulay2 we can construct the adjacency matrix of our incidence graph $G$ via the following code:
 \begin{verbatim}
