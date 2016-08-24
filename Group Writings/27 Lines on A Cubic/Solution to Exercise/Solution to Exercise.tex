@@ -61,7 +61,7 @@
 \newtheorem*{thmC}{Theorem C}
 \newtheorem{defn}[lemma]{Definition} 
 \newtheorem{notation}[lemma]{Notation} 
-\newtheorem{exercise}[lemma]{Exercise}
+\newtheorem{ex}[lemma]{Exercise}
 \newtheorem{question}[lemma]{Question}
 \newtheorem{assumption}[lemma]{Assumption}
 \newtheorem{principle}[lemma]{Principle}
@@ -262,10 +262,23 @@
 \setcounter{MaxMatrixCols}{20}
 
 \title{Apprenticeship Week - Fitness Exercise}
-\author{David J. Bruce}
-\address{Department of Mathematics, University of Wisconsin, Madison, WI}
+
+\author{Madeline Brandt}
+\address{Department of Mathematics, University of California, Berkeley, CA}
 \email{\href{mailto:djbruce@math.wisc.edu}{djbruce@math.wisc.edu}}
 \urladdr{\url{http://math.wisc.edu/~djbruce/}}
+
+\author{David J. Bruce}
+\address{Department of Mathematics, University of Wisconsin, Madison, WI}
+\email{\href{mailto:brandtm@berkeley.edu}{brandtm@berkeley.edu}}
+\urladdr{\url{https://math.berkeley.edu/~brandtm/}}
+
+\author{Alessandro Oneto}
+\address{Matematiska Institutionen, Stockholms Universitet}
+\email{\href{mailto:oneto@math.su.se}{oneto@math.su.se}}
+\urladdr{\url{https://staff.math.su.se/oneto/}}
+
+
 
 \begin{document} 
 \maketitle
@@ -304,37 +317,19 @@ Let $C_1$ and $C_2$ be curves in $\P^2$ and $X$ be the cubic surface obtained fr
 
 In particular, this exercise says that in order to understand intersections on $X$ it is enough to think about intersections on $\P^2$. For example, in the plane the two lines $\ell_{i,j}$ and $\ell_{s,t}$ intersect in exactly one point. Moreover, the intersection $\{i,j\}\cap \{s,t\}$ is non-empty if and only if this point of intersection is one of the $p_i$. Therefore, we see that:
 \[
-\ell_{i,j}\cap \ell_{s,t}=
+\ell_{i,j}\cap \ell_{s,t}=\begin{cases} \o &\mbox{if } \{i,j\}\cap\{s,t\}\neq\o \\ 
+\{*\} & \mbox{else }  \end{cases} 
 \]
 Similarly, we know that the line $\ell_{i,j}$ and the conic $C_{k}$ intersect in precisely two points. (We shall assume the points $p_i$ have been chosen sufficiently generally so that none of the lines of interest are tangent to any of the conics.) \deej{An example here might be cool.}
 
- if two curves in $\P^2$ intersect in a point other than $\{p_1,\ldots,p_6\}$.Coding these relations into Macaulay2 we can construct the adjacency matrix of our incidence graph $G$ via the following code:
-\begin{verbatim}
--- The incidence matrix is a block matrix where the blocks are given by the subspaces:
--- The E = {e1,e2,e3,..,e6} with e_i corresponding to the exceptional divisors at point p_i
--- The C = {c1,c2,c3,..,c6} with c_i corresponding to the conic not containing the poitn p_i
--- The L = {{1,2},{1,3},...,{5,6}} where {i,j} with i>j is the line from p_i to p_j.
- 
-L = {{1,2},{1,3},{1,4},{1,5},{1,6},{2,3},{2,4},{2,5},{2,6},{3,4},{3,5},{3,6},{4,5},{4,6},{5,6}}
+Finally, by a similar line of reasoning one can see that:
+\[
+E_i\cap E_j=\o, \quad\quad E_i\cap \ell_{j,k}=\begin{cases} \{*\} &\mbox{if } i\in \{j,k\} \\ 
+\o & \mbox{else }  \end{cases} \quad \quad, \text{and} \quad \quad E_i\cap C_j=\begin{cases} \{*\} &\mbox{if } i\neq j \\ 
+\o & \mbox{else }  \end{cases}.
+\]
 
--- Constructs the needed block matrices.
-EE = matrix apply(6,i->apply(6, j->0))
-EC = matrix apply(6,i->apply(6, j->(if i==j then 0 else 1)))
-EL = matrix apply(6,i->apply(L, j->(if isSubset({i+1},j)==true then 1 else 0)))
-CL = matrix apply(6,i->apply(L, j->(if isSubset({i+1},j)==true then 1 else 0)))
-CCC = matrix apply(6,i->apply(6, j->0))
-LL = matrix apply(L, i->apply(L, j->(if set i * set j===set {} then 1 else 0)))
-
--- Combines the blocks into the block rows.	    
-R1 = EE | EC | EL
-R2 = EC | CCC | CL
-R3 = (transpose EL) | (transpose CL) | LL
-
--- The adjacency matrix for the graph.
-A = transpose ( (transpose R1)|(transpose R2)|(transpose R3))
-\end{verbatim}
-
-From this information it is easy to verify -- for example by summing the rows of the adjacency matrix -- that the graph is $10$-regular i.e. every vertex has degree 10. Additionally, we can try to visualize it as seen below:
+Coding these relations into Macaulay2 we can construct the adjacency matrix of our graph $G$. From this it is easy to verify -- for example by summing the rows of the adjacency matrix -- that the graph is $10$-regular i.e. every vertex has degree 10. Additionally, we can try to visualize it as seen below:
 \deej{NEDEDED}
 
 Turning our attention to finding independent sets Macaulay2 shows the maximal ones are of size six. For example, the the six exceptional divisors $E_1,\ldots,E_6$ do not intersect, and so the corresponding vertices are an independent set. In fact, all the maximal independent sets can be classified as follows:
