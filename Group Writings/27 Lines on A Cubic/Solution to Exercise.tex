@@ -1,0 +1,418 @@
+\documentclass[11pt]{amsart}
+\usepackage{amstext,amsfonts,amssymb,amscd,amsbsy,amsmath,verbatim,fullpage,mathrsfs}
+\usepackage[letterpaper, margin=.7in]{geometry}
+
+\usepackage[alphabetic,lite,backrefs]{amsrefs} % for bibliography
+%\usepackage[bookmarks, colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, pagebackref=true]{hyperref}
+\usepackage{ifthen}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage[all]{xy}
+\usepackage{enumerate}
+\usepackage{pdflscape}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{bbm}									     					% Creates nice blackboard bold 1
+\usepackage{tikz}									    					% Allows us to create diagrams
+\usetikzlibrary{positioning}
+\tikzset{main node/.style={circle,fill=blue!20,draw,minimum size=.65cm,inner sep=0pt},
+            }
+\tikzset{gre node/.style={plain},
+            }            
+
+\usetikzlibrary{matrix}													% Calls useful TikZ libraries
+\usetikzlibrary{shapes}													% Calls useful TikZ libraries
+\usepackage{tikz-cd}									    					% Nice for creating commutative diagrams
+\usepackage{mathtools}
+
+\usepackage{float}	
+\usepackage{parskip}
+
+\usepackage{titlesec}								     					% Allows one to use nice section titles
+\titleformat{\section}[block]{\large\scshape\bfseries\filcenter}{\thesection.}{1em}{}		% Creates section titles
+\titleformat{\subsection}[hang]{\large\scshape\bfseries}{\thesubsection}{1em}{}			% Creates subsection titles
+
+
+\usepackage[titles]{tocloft}								     					% Creates table of fancy contents
+\renewcommand{\contentsname}{}	     					% Renames and centers title of ToC
+
+\usepackage[bookmarks,linktoc=all,pagebackref=true]{hyperref}						    					% Creates the linkable ToC
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=black
+}
+
+\usepackage{kpfonts}								    					% This font allows you to use both bold and scshape
+
+
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{propo}[lemma]{Proposition}
+\newtheorem{prop}[lemma]{Proposition}
+\newtheorem{cor}[lemma]{Corollary}
+\newtheorem{conj}[lemma]{Conjecture}
+\newtheorem{claim}[lemma]{Claim}
+\newtheorem{claim*}{Claim}
+\newtheorem{thm}[lemma]{Theorem}
+\newtheorem*{thmA}{Theorem A}
+\newtheorem*{thmB}{Theorem B}
+\newtheorem*{thmC}{Theorem C}
+\newtheorem{defn}[lemma]{Definition} 
+\newtheorem{notation}[lemma]{Notation} 
+\newtheorem{exercise}[lemma]{Exercise}
+\newtheorem{question}[lemma]{Question}
+\newtheorem{assumption}[lemma]{Assumption}
+\newtheorem{principle}[lemma]{Principle}
+\newtheorem{heuristic}[lemma]{Heuristic}
+
+\theoremstyle{remark}
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{example}[lemma]{Example}
+
+
+% Commands
+\newcommand{\initial}{\operatorname{in}}
+\newcommand{\NF}{\operatorname{NF}}
+\newcommand{\Hilb}{\operatorname{Hilb}}
+\newcommand{\depth}{\operatorname{depth}}
+\newcommand{\reg}{\operatorname{reg}}
+\newcommand{\cone}{\textbf{cone}}
+
+\newcommand{\length}{\operatorname{length}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\adeg}{\operatorname{adeg}}
+\newcommand{\pdim}{\operatorname{pdim}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\LT}{\operatorname{LT}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\NS}{\operatorname{NS}}
+\newcommand{\Frac}{\operatorname{Frac}}
+\newcommand{\Char}{\operatorname{char}}
+\newcommand{\Proj}{\operatorname{Proj}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Div}{\operatorname{Div}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Supp}{\operatorname{Supp}}
+\newcommand{\ann}{\operatorname{ann}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Span}{\operatorname{span}}
+
+
+\newcommand{\Pic}{\operatorname{Pic}}
+\newcommand{\QQbar}{{\overline{\mathbb Q}}}
+\newcommand{\Br}{\operatorname{Br}}
+\newcommand{\Bl}{\operatorname{Bl}}
+\newcommand{\Cox}{\operatorname{Cox}}
+\newcommand{\getsr}{\operatorname{Tor}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\Hom}{\operatorname{Hom}} %done
+\newcommand{\sheafHom}{\mathcal{H}om}
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\Sym}{\operatorname{Sym}} %done
+\newcommand{\GL}{{GL}}
+\newcommand{\Prob}{\operatorname{Prob}}
+\newcommand{\Density}{\operatorname{Density}}
+\newcommand{\Tot}{\operatorname{Tot}}
+
+\newcommand{\Syz}{\operatorname{Syz}}
+\newcommand{\defi}[1]{\textsf{#1}} % for defined terms
+
+\newcommand{\arrow}{\xrightarrow}							% tuple
+\newcommand{\xn}{x_1,\ldots,x_n}							% tuple
+\newcommand{\xN}{x_0,\ldots,x_n}							% tuple
+\newcommand{\zn}{z_1,\ldots,z_n}							% tuple
+\newcommand{\vn}{v_1,\ldots,v_n}							% tuple
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Letters  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\fF}{\mathbf F}
+\newcommand{\kK}{\mathbf K}
+\newcommand{\BS}{\mathbf S}
+\newcommand{\qQ}{\mathbf Q}
+\newcommand{\rR}{\mathbf R}
+
+\newcommand{\ff}{\mathbf f}
+\newcommand{\kk}{\mathbf k}
+\renewcommand{\O}{\mathcal{O}}
+
+%%%% Caligraphic Fonts - i.e. ????. %%%%%
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}} 
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\U}{\mathcal{U}} 		% Notice this is different
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+%%%% Blackboard Fonts - i.e. Real Numbers, Integers, etc. %%%%%
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\renewcommand{\H}{\mathbb{H}} 
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bO}{\mathbb{O}}		% Notice this is \bO
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\bU}{\mathbb{U}}		% Notice this is \bU
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}}
+
+ %%%% Sarif Fonts - i.e. ???? %%%%%
+\newcommand{\sA}{\mathsf{A}}
+\newcommand{\sB}{\mathsf{B}}
+\newcommand{\sC}{\mathsf{C}}
+\newcommand{\sD}{\mathsf{D}}
+\newcommand{\sE}{\mathsf{E}}
+\newcommand{\sF}{\mathsf{F}}
+\newcommand{\sG}{\mathsf{G}}
+\newcommand{\sH}{\mathsf{H}} 
+\newcommand{\sI}{\mathsf{I}}
+\newcommand{\sJ}{\mathsf{J}}
+\newcommand{\sK}{\mathsf{K}}
+\newcommand{\sL}{\mathsf{L}}
+\newcommand{\sM}{\mathsf{M}}
+\newcommand{\sN}{\mathsf{N}}
+\newcommand{\sO}{\mathsf{O}}
+\newcommand{\sP}{\mathsf{P}}
+\newcommand{\sQ}{\mathsf{Q}}
+\newcommand{\sR}{\mathsf{R}}
+\newcommand{\sS}{\mathsf{S}}
+\newcommand{\sT}{\mathsf{T}}
+\newcommand{\sU}{\mathsf{U}} 
+\newcommand{\sV}{\mathsf{V}}
+\newcommand{\sW}{\mathsf{W}}
+\newcommand{\sX}{\mathsf{X}}
+\newcommand{\sY}{\mathsf{Y}}
+\newcommand{\sZ}{\mathsf{Z}}
+ 
+ %%%% Fraktur Fonts - i.e. maximal ideals, prime ideals, etc. %%%%%
+\newcommand{\cl}{\mathfrak{cl}}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\m}{\mathfrak{m}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\q}{\mathfrak{q}}
+\renewcommand{\r}{\mathfrak{r}}
+\newcommand{\doot}{\bullet}
+
+
+\newcommand{\bl}[1]{{\color{blue}#1}}
+\newcommand{\re}[1]{{\color{red}#1}}
+\newcommand{\br}[1]{{\color{RawSienna}#1}}
+\newcommand{\gr}[1]{{\color{ForestGreen}#1}}
+
+\newcommand{\gre}[1]{{\color{ForestGreen}\tiny#1}}
+\newcommand{\red}[1]{{\color{red}\tiny#1}}
+
+\newcommand{\stk}[2]{{\genfrac{}{}{0pt}{0}{\re{#1}}{\genfrac{}{}{0pt}{0}{\oplus}{\bl{#2}}}}}
+
+\newcommand{\ve}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\chr}{\ensuremath{\operatorname{char}}}
+\newcommand\commentr[1]{{\color{red} \sf [#1]}}
+\newcommand\commentb[1]{{\color{blue} \sf [#1]}}
+\newcommand\commentm[1]{{\color{magenta} \sf [#1]}}
+\newcommand{\daniel}[1]{{\color{blue} \sf $\clubsuit\clubsuit\clubsuit$ Daniel: [#1]}}
+\newcommand{\deej}[1]{{\color{red} \sf $\spadesuit\spadesuit\spadesuit$ DJ: [#1]}}
+
+\setcounter{MaxMatrixCols}{20}
+
+\title{Apprenticeship Week - Fitness Exercise}
+\author{David J. Bruce}
+\address{Department of Mathematics, University of Wisconsin, Madison, WI}
+\email{\href{mailto:djbruce@math.wisc.edu}{djbruce@math.wisc.edu}}
+\urladdr{\url{http://math.wisc.edu/~djbruce/}}
+
+\begin{document} 
+\maketitle
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Wednesday, August 24, 2016}
+
+In order to understand the incidence correspondence of the 27 lines on a smooth cubic surface in $\P^3$ over an algebraically closed field we will utilize the following result, which is stated in Remark 4.7.1 of \cite{hartshorne}.
+
+\begin{theorem}
+Any smooth cubic surface $X$ in $\P^3$ over an algebraically closed field is isomorphic to the blow-up of $\P^2$ at six points $p_1,\ldots,p_6$ where no three of the $p_i$ are colinear and all six are not on a cubic.
+\end{theorem}
+
+Using this fact we see two things:
+\begin{enumerate}[(i)]
+\item the incidence graph of lines on a smooth cubic surface in $\P^3$ (over an algebraically closed field) is well-defined i.e. does not depend on our choice of $X$;
+\item this graph can be constructed by considering the lines on $X$ the blow-up of $\P^2$ at six sufficently generic chosen points $p_1,\ldots,p_6$. 
+\end{enumerate}
+Restricting our attention to the cubic surface $X$ described above we can visualize the lines as shown below:
+
+In particular, from this picture above that our 27 lines come in three flavors:
+\begin{enumerate}[(i)]
+\item one line, the exceptional divisor $E_i$, over the point $p_i$ 
+\item one line $\ell_{i,j}$ coming from the strict transform of the line between $p_i$ and $p_j$
+\item one line $C_i$ coming from strict transform of the unique plane conic going through $p_1,\ldots,\hat{p}_i,\ldots,p_6$.
+\end{enumerate}
+(Note we will often abuse notation and use the same symbol for a curve and its strict transform.) Shift towards trying to compute the incidence graph $G$ of these lines recall the strict transforms of two curves $C_1, C_2\subset\P^2$ will intersect in the blow-up $X$ if and only if $C_1$ and $C_2$ have a point of intersection outside of $\{p_1,\ldots,p_6\}$. \deej{NEDED}
+
+For example, in the plane two lines $\ell_{i,j}$ and $\ell_{s,t}$ intersect in exactly one point. Moreover, the intersection $\{i,j\}\cap \{s,t\}$ is non-empty if and only if this point of intersection is one of the $p_i$. Therefore, we see that:
+\[
+\ell_{i,j}\cap \ell_{s,t}=
+\]
+Similarly, 
+
+ if two curves in $\P^2$ intersect in a point other than $\{p_1,\ldots,p_6\}$.Coding these relations into Macaulay2 we can construct the adjacency matrix of our incidence graph $G$ via the following code:
+\begin{verbatim}
+-- The incidence matrix is a block matrix where the blocks are given by the subspaces:
+-- The E = {e1,e2,e3,..,e6} with e_i corresponding to the exceptional divisors at point p_i
+-- The C = {c1,c2,c3,..,c6} with c_i corresponding to the conic not containing the poitn p_i
+-- The L = {{1,2},{1,3},...,{5,6}} where {i,j} with i>j is the line from p_i to p_j.
+ 
+L = {{1,2},{1,3},{1,4},{1,5},{1,6},{2,3},{2,4},{2,5},{2,6},{3,4},{3,5},{3,6},{4,5},{4,6},{5,6}}
+
+-- Constructs the needed block matrices.
+EE = matrix apply(6,i->apply(6, j->0))
+EC = matrix apply(6,i->apply(6, j->(if i==j then 0 else 1)))
+EL = matrix apply(6,i->apply(L, j->(if isSubset({i+1},j)==true then 1 else 0)))
+CL = matrix apply(6,i->apply(L, j->(if isSubset({i+1},j)==true then 1 else 0)))
+CCC = matrix apply(6,i->apply(6, j->0))
+LL = matrix apply(L, i->apply(L, j->(if set i * set j===set {} then 1 else 0)))
+
+-- Combines the blocks into the block rows.	    
+R1 = EE | EC | EL
+R2 = EC | CCC | CL
+R3 = (transpose EL) | (transpose CL) | LL
+
+-- The adjacency matrix for the graph.
+A = transpose ( (transpose R1)|(transpose R2)|(transpose R3))
+\end{verbatim}
+
+From this information it is easy to verify -- for example by summing the rows of the adjacency matrix -- that the graph is $10$-regular i.e. every vertex has degree 10. Additionally, we can try to visualize it as seen below:
+\deej{NEDEDED}
+
+Turning our attention to finding independent sets Macaulay2 shows the maximal ones are of size six. For example, the the six exceptional divisors $E_1,\ldots,E_6$ do not intersect, and so the corresponding vertices are an independent set. In fact, all the maximal independent sets can be classified as follows:
+
+\begin{tabular}{c | c | c}
+\textbf{Type} & \textbf{Example} & \textbf{Number} \\ \hline 
+$\{E_1,\ldots,E_6\}$ & $\{E_1,\ldots,E_6\}$ & 1 \\ \hline
+$\{C_1,\ldots,C_6\}$ &$\{C_1,\ldots,C_6\}$  & 1 \\ \hline 
+ $\left\{\{E_i,E_j,E_k,\ell_{a,b},\ell_{c,d},\ell_{e,f}\} \; \bigg| \; i,j,k\not\in \{a,b,c,d,e,f\}\right\}$ & $\{E_1, E_2, E_3, \ell_{4,5}, \ell_{4,6}, \ell_{5,6}\}$ & 20 \\  \hline
+$\left\{\{C_i,C_j,C_k,\ell_{a,b},\ell_{c,d},\ell_{e,f}\} \; \bigg| \; i,j,k\not\in \{a,b,c,d,e,f\}\right\}$ & $\{C_1, C_2, C_3, \ell_{4,5}, \ell_{4,6}, \ell_{5,6}\}$ & 20 \\ \hline
+ $\left\{\{E_i, C_i, \ell_{a,b},\ell_{c,d},\ell_{e,f},\ell_{g,h}\} \; \bigg| \; \right\}$ & $\{E_1, C_1, \ell_{2,3}, \ell_{2,4}, \ell_{2,5}, \ell_{2,6}\}$ & 30 \\\hline
+ & \textbf{Total} & \textbf{72}
+\end{tabular}
+
+Similarly, we can also classify the independent sets of size five, i.e. one less than maximal, as follows:
+
+\deej{NEDEDEDED}
+
+Thus, we see that the complex of independent sets of $G$, which we denote $\cC_{\text{Ind}}(G)$, has exactly 72 faces of dimension 5 and 648 face of dimension 4. \deej{Can we say something more from this....} In order to get our ``hands'' on the full complex $\cC_{\text{Ind}}(G)$ we use the fact that the independence complex is the clique complex of complement graph. (Recall the complement of a graph is the graph with the same vertices where two vertices are adjacent if they are not adjacent in the initial graph.) Hence the starting with the adjaceny matrix $A$ for $G$ the following Macaulay2 code, using the Graphs \deej{NEDEDED} package, computes $\cC_{\text{Ind}}(G)$. 
+\begin{verbatim}
+loadPackage "Graphs"
+G = graph A
+G' = complementGraph G
+S = cliqueComplex G'
+\end{verbatim}
+Doing this we can confirm that $\cC_{\text{Ind}}(G)$ is five-dimensional, and moreover, its $f$-vector is:
+ \[
+ \text{fVec}(\cC_{\text{Ind}}(G))=(27, 216,720,1080,648,72).
+ \]
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{eisenbud}{book}{
+   author={Eisenbud, David},
+   title={Commutative algebra},
+   series={Graduate Texts in Mathematics},
+   volume={150},
+   note={With a view toward algebraic geometry},
+   publisher={Springer-Verlag, New York},
+   date={1995},
+   pages={xvi+785},
+%   isbn={0-387-94268-8},
+%   isbn={0-387-94269-6},
+%   review={\MR{1322960 (97a:13001)}},
+%   doi={10.1007/978-1-4612-5350-1},
+}
+        
+\bib{hartshorne}{book}{
+   author={Hartshorne, Robin},
+   title={Algebraic Geometry},
+   series={Graduate Texts in Mathematics},
+   volume={52},
+   note={With a view toward algebraic geometry},
+   publisher={Springer-Verlag, New York},
+   date={1977},
+   pages={xvi+496},
+%   isbn={0-387-94268-8},
+%   isbn={0-387-94269-6},
+%   review={\MR{1322960 (97a:13001)}},
+%   doi={10.1007/978-1-4612-5350-1},
+}
+
+\bib{M2}{misc}{
+    label={M2},
+    author={Grayson, Daniel~R.},
+    author={Stillman, Michael~E.},
+    title = {Macaulay 2, a software system for research
+	    in algebraic geometry},
+    note = {Available at \url{http://www.math.uiuc.edu/Macaulay2/}},
+}
+
+\bib{mircea}{article}{
+   author={Musta\c{t}\u{a}, Mircea},
+   title={Zeta functions in algebraic geometry},
+   date={2011},
+   note = {Available at \url{http://www.math.lsa.umich.edu/~mmustata/zeta_book.pdf}},
+%   issn={0002-9327},
+%   review={\MR{0065218 (16,398d)}},
+}
+
+%http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf
+\end{biblist}
+\end{bibdiv}
+\end{document}

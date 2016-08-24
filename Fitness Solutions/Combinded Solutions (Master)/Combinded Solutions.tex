@@ -1,0 +1,446 @@
+\documentclass[twoside, 10]{amsart}
+\usepackage[alphabetic,lite,backrefs]{amsrefs} % for bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Title Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\TitleLecture}{Solutions to the Fitness Exercise}
+\newcommand{\LectureDate}{Summer 2016}
+\newcommand{\LectureLocation}{at the Fields Institute}
+\newcommand{\LectureClassName}{Apprenticeship Weeks }
+\newcommand{\Name}{the Apprentices}
+\newcommand{\Lecturer}{Bernd Sturmfels}
+\newcommand{\LectureDescription}{Early-career mathematicians - those who are close to finishing their doctorates or have recently finished - are invited to a fortnight of apprenticeship in combinatorial algebraic geometry. For an intense two weeks (21 August 2016 - 3 September 2016), we will get our hands dirty exploring new problems and keep our computers spinning with many calculations. Led by Bernd Sturmfels, participants will learn new skills of the trade, networks with peers, and practice their craft.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Standard Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amssymb}                                                                 					% Creates AMS Symbols 
+\usepackage{amsthm}                                                                    					% Creates AMS Enviorments
+ \usepackage{mathrsfs}  								    					% Sheafy font \mathscr{}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Formatting Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[head=30pt, hmargin=1 in, vmargin=1 in]{geometry}                	   					% See geometry.pdf to learn the layout options. There are lots.
+	\geometry{letterpaper}                   					   					% ... or a4paper or a5paper or ... 
+	%\geometry{landscape}                                                         					 % Activate for for rotated page geometry      						   			
+
+%%%% This makes the package parskip package work.  If this is not here the table of contents title doesn't go int the right place.  Apparently amsart, parskip,
+%%%% and tocoft don't play well together.  However, in order to get the proper theorem spacing amsart is needed instead of article.
+\usepackage{etoolbox}
+\makeatletter
+\let\ams@starttoc\@starttoc
+\makeatother
+\usepackage[parfill]{parskip}
+\makeatletter
+\let\@starttoc\ams@starttoc
+\patchcmd{\@starttoc}{\makeatletter}{\makeatletter\parskip\z@}{}{}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Images and Figures %%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}								  					 % Allows one to use jpeg, eps, and other images
+\usepackage{float}									    					 % Allows one to use H when placing figures
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{epstopdf}								    
+
+\usepackage{verbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Headers and Footers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}								   					 % Creates nice header
+\usepackage{lastpage}
+
+%%%%%% Header %%%%%
+\pagestyle{fancy}									     					% Allows one to have fancy headers
+\fancyhead[EL, OR]{\thepage}							     					% Places page numbers on pages
+\fancyhead[ER]{\Name}								     					% Places note takers name on even pages
+\fancyhead[OL]{\LectureClassName}						    					% Places name of course on odd pages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Titles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}								     					% Allows one to use nice section titles
+\titleformat{\section}[block]{\Large\scshape\bfseries\filcenter}{\thesection.}{1em}{}		% Creates section titles
+\titleformat{\subsection}[hang]{\large\scshape\bfseries}{\thesubsection}{1em}{}			% Creates subsection titles
+\titleformat{\subsubsection}[hang]{\large\scshape\bfseries}{\thesubsection}{1em}{}			% Creates subsection titles
+
+\usepackage{kpfonts}								    					% This font allows you to use both bold and scshape
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ToC and Index %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{afterpage}
+\usepackage[titles]{tocloft}								     					% Creates table of fancy contents
+\renewcommand{\contentsname}{\Large Table of Contents}	     					% Renames and centers title of ToC
+
+\usepackage[linktoc=all]{hyperref}						    					% Creates the linkable ToC
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=black
+}
+%\usepackage{makeidx}													% Makes Index not (not needed for amsart)
+\makeindex 															% Makes Index
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Diagrams %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}									    					% Allows us to create diagrams
+\usetikzlibrary{matrix}													% Calls useful TikZ libraries
+\usetikzlibrary{shapes}													% Calls useful TikZ libraries
+\usetikzlibrary{shadings}													% Calls useful TikZ libraries
+\usepackage{pgfplots}
+\usepgfplotslibrary{colormaps,external}
+\pgfplotsset{compat=1.7}
+
+\usepackage[cmtip,arrow]{xy}												% Nice for creating commutative diagrams
+\usepackage{pb-diagram,pb-xy}											% Nice for creating commutative diagrams
+\usepackage{tikz-cd}									    					% Nice for creating commutative diagrams
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Arrows %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{extarrows}													% Some more extensible arrows, like \xmapsto
+\usepackage{chemarrow}													% Some more extensible arrows, like \xmapsto
+\usepackage{empheq}        							    					% Some more extensible arrows, like \xmapsto
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Misc %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{enumerate}								     					% Helps making lists and outlines
+\usepackage{thmtools}
+\usepackage{mathtools}
+\usepackage{bbm}									     					% Creates nice blackboard bold 1
+\usepackage{framed}	
+\usepackage{eufrak}														%Fraktur Font
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{con}{Conjecture}[subsection]
+\newtheorem{cor}{Corollary}[subsection]
+\newtheorem{lem}{Lemma}[subsection]
+\newtheorem{prop}{Proposition}[subsection]
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[subsection]
+\newtheorem{ex}{Exercise}[subsection]
+\newtheorem{exm}{Example}[subsection]
+\newtheorem{rem}{Remark}[subsection]
+\newtheorem{joke}{Joke}
+\newtheorem{story}{Story}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Short Hands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\supp}{\text{supp}}							% Support	
+\newcommand{\ord}[1]{\text{ord}_{#1}}						% Order at a prime
+\newcommand{\xn}{x_1,\ldots,x_n}							% tuple
+\newcommand{\xN}{x_0:\ldots:x_n}							% tuple
+\newcommand{\zn}{z_1,\ldots,z_n}							% tuple
+\newcommand{\vn}{v_1,\ldots,v_n}							% tuple
+\newcommand{\length}{\operatorname{length}}					%l length
+\newcommand{\sub}{\subset}								% Subset
+\newcommand{\maps}{\longmapsto}							% Long maps to
+\newcommand{\into}{\hookrightarrow}						% Injection
+\newcommand{\onto}{\twoheadrightarrow}						% Surjection
+\newcommand{\iso}{\approx}								% Isomorphic
+\newcommand{\homotopic}{\simeq}							% Homotopic
+\newcommand{\homeq}{\cong}								% Homeomorphic
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Letters  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% Caligraphic Fonts - i.e. ????. %%%%%
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}} 
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}} 
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+%%%% Blackboard Fonts - i.e. Real Numbers, Integers, etc. %%%%%
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\renewcommand{\H}{\mathbb{H}} 
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\O}{\mathbb{O}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}}
+
+ %%%% Sarif Fonts - i.e. ???? %%%%%
+\newcommand{\sA}{\mathsf{A}}
+\newcommand{\sB}{\mathsf{B}}
+\newcommand{\sC}{\mathsf{C}}
+\newcommand{\sD}{\mathsf{D}}
+\newcommand{\sE}{\mathsf{E}}
+\newcommand{\sF}{\mathsf{F}}
+\newcommand{\sG}{\mathsf{G}}
+\newcommand{\sH}{\mathsf{H}} 
+\newcommand{\sI}{\mathsf{I}}
+\newcommand{\sJ}{\mathsf{J}}
+\newcommand{\sK}{\mathsf{K}}
+\newcommand{\sL}{\mathsf{L}}
+\newcommand{\sM}{\mathsf{M}}
+\newcommand{\sN}{\mathsf{N}}
+\newcommand{\sO}{\mathsf{O}}
+\newcommand{\sP}{\mathsf{P}}
+\newcommand{\sQ}{\mathsf{Q}}
+\newcommand{\sR}{\mathsf{R}}
+\newcommand{\sS}{\mathsf{S}}
+\newcommand{\sT}{\mathsf{T}}
+\newcommand{\sU}{\mathsf{U}} 
+\newcommand{\sV}{\mathsf{V}}
+\newcommand{\sW}{\mathsf{W}}
+\newcommand{\sX}{\mathsf{X}}
+\newcommand{\sY}{\mathsf{Y}}
+\newcommand{\sZ}{\mathsf{Z}}
+ 
+ %%%% Fraktur Fonts - i.e. maximal ideals, prime ideals, etc. %%%%%
+\newcommand{\cl}{\mathfrak{cl}}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\m}{\mathfrak{m}}
+\newcommand{\n}{\mathfrak{n}}
+\newcommand{\p}{\mathfrak{p}}
+\newcommand{\q}{\mathfrak{q}}
+\renewcommand{\r}{\mathfrak{r}}
+\newcommand{\s}{\mathfrak{s}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Greek Short Hands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\vphi}{\varphi}											% Variable Phi
+\newcommand{\vepsi}{\varepsilon}										% Variable Epsilon
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Linear Algebra %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\rank}{\operatorname{rank}}								% Rank
+\DeclareMathOperator{\Tr}{Tr}											% Trace
+\DeclareMathOperator{\Coker}{coker}									% Cokernel
+\DeclareMathOperator{\Ker}{Ker}										% Kernel
+\DeclareMathOperator{\img}{Img}										% Image
+\DeclareMathOperator{\Hom}{\operatorname{Hom}}							% Hom-Set
+\DeclareMathOperator{\End}{\operatorname{End}}							% End-Set
+\DeclareMathOperator{\Span}{\operatorname{Span}}							% Span
+\DeclareMathOperator{\Sym}{\operatorname{Sym}}							% Symmetric Space
+\newcommand{\tensor}{\otimes}										% Tensor
+\DeclareMathOperator{\Ann}{\operatorname{Ann}}							% Annihilator
+\newcommand{\Wedge}{\bigwedge\nolimits}								% Creates nicely formated big wedge
+\newcommand{\innp}[2]{\left\langle#1,#2\right\rangle}						% Inner Product
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Matrix Algebra %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\GL}{\operatorname{GL}}							% General Linear Group
+\DeclareMathOperator{\PGL}{\operatorname{PGL}}							% Projective General Linear Group
+\DeclareMathOperator{\SL}{\operatorname{SL}}							% Special Linear Group
+\newcommand{\SU}{\operatorname{SU}}									% Special Unitary Group
+\DeclareMathOperator{\PSL}{\operatorname{PSL}}							% Projective Special Linear Group
+\DeclareMathOperator{\Mat}{\operatorname{Mat}}							% Matrix Group
+\DeclareMathOperator{\ad}{\operatorname{ad}}								% Adjoint
+\DeclareMathOperator{\Ad}{\operatorname{Ad}}							% Adjoint
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Lie Algebra %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\gl}{\operatorname{\g\l}}								% General Linear Lie Algebra
+\renewcommand{\sl}{\operatorname{\s\l}}								% Special Linear Lie Algebra
+\renewcommand{\sp}{\operatorname{\s\p}}							% Symplectic Lie Algebra
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Representation Theory %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\std}{\operatorname{std}}									% Standard Representation 
+\newcommand{\sgn}{\operatorname{sgn}}									% Sign Representation
+\newcommand{\res}{\operatorname{res}}									% Restriction 
+\newcommand{\ind}[2]{\operatorname{Ind}_{#1}^{#2}} 						% Induced Representation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Field Theory % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\Char}{\operatorname{char}}							% Characteristic
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Group Theory %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\orb}{Orb}										% Orbit 
+\DeclareMathOperator{\stab}{Stab}										% Stabilizer
+\DeclareMathOperator{\Aut}{Aut}										% Automorphism Group 
+\DeclareMathOperator{\Gal{Gal}}										% Galois Group
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Algebraic Geometry %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\O}{\ensuremath{\mathcal{O}}}							% Fancy O that is used for a bunch of things
+\DeclareMathOperator{\Ext}{\operatorname{Ext}}							% Ext
+\DeclareMathOperator{\ext}{\operatorname{ext}}							% Dimension of Ext
+\DeclareMathOperator{\Frac}{\operatorname{Frac}}							% Fraction Field
+\DeclareMathOperator{\Spec}{\operatorname{Spec}}							% Spectrum
+\DeclareMathOperator{\mSpec}{\operatorname{maxSpec}}					% Maximal Spectrum
+\DeclareMathOperator{\Rad}{\operatorname{Rad}}							% Radical of Ideal
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Category Theory %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator{\colim}{Colim}									% Colimit
+\newcommand{\cat}{\text{\bf Cat}}										% Category
+\newcommand{\Set}{\text{\bf Set}}										% Category of Sets
+\renewcommand{\top}{\text{\bf Top}}										% Category of Top. Spaces
+\newcommand{\Op}{\text{\bf Op}}										% Category of Open Sets on a Fixed Space
+\newcommand{\Toph}{\text{\bf Toph}}									% Category of Homotopic  Top. Spaces
+\newcommand{\Ring}{\text{\bf Ring}}										% Category of Rings
+\newcommand{\CRing}{\text{\bf CRing}}									% Category of Com. Rings
+\newcommand{\Grp}{\text{\bf Grp}}										% Category of Groups
+\newcommand{\Ab}{\text{\bf Ab}}										% Category of Abelian Groups
+\newcommand{\Obj}{\text{\bf Obj}}										% Category of Groups
+\newcommand{\Alg}{\text{\bf  AlgSet}}										% Category of Abelian Groups
+\newcommand{\Id}{\text{\bf Id}}										% Category of Abelian Groups
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Short Exact Sequences %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ses}[3]{0\xlongrightarrow{}#1\xlongrightarrow{}#2				% Short Exact Sequence with unlabeled arrows
+   \xlongrightarrow{}#3\xlongrightarrow{}0} 
+\newcommand{\Ses}[5]{0\xlongrightarrow{}#1\xlongrightarrow{#2}#3				% Short Exact Sequence with labeled arrows
+   \xlongrightarrow{#4}#5\xlongrightarrow{}0} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Title %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic publisher logo
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
+\centering % Center all text
+\vspace*{\baselineskip} % White space at the top of the page
+
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
+\rule{\textwidth}{0.4pt}\\[\baselineskip] % Thin horizontal line
+
+{\LARGE \TitleLecture \\[0.3\baselineskip]\normalsize\textit{Base on problems written by: \Lecturer \\Notes by: \Name}}\\[0.2\baselineskip] % Title
+
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
+\rule{\textwidth}{1.6pt}\\[\baselineskip] % Thick horizontal line
+
+\scshape % Small caps
+\LectureDescription\\[\baselineskip] % Tagline(s) or further description
+\LectureLocation,  \LectureDate\par % Location and year
+
+%\vspace*{2\baselineskip} % Whitespace between location/year and editors
+
+%Edited by \\[\baselineskip]
+%{\Large JOHN SMITH \\ JANE SMITH \\ JAMES SMITH\par} % Editor list
+%{\itshape The University of California \\ Berkeley\par} % Editor affiliation
+
+%\vfill % Whitespace between editor names and publisher logo
+
+%\plogo \\[0.3\baselineskip] % Publisher logo
+%{\scshape 2012} \\[0.3\baselineskip] % Year published
+%{\large THE PUBLISHER}\par % Publisher
+
+\endgroup}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% code for algebra blackbox :  \fbox{\parbox{6.5in}{\textsc{Algebra Blackbox:} \\ }}
+\begin{document}
+\pagestyle{empty} % Removes page numbers
+\titleGP % This command includes the title page
+\tableofcontents
+\newpage
+\pagestyle{fancy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Monday, August 22, 2016 - Curves}
+
+\input{../Curves/ex-3-david-j-bruce}
+
+\section{Wednesday, August 24, 2016 - Surfaces}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printindex	 %Prints Index [Typeset LaTeX, Typeset MakeIndex, Typeset LaTeX x3]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+
+\phantomsection
+
+\addcontentsline{toc}{section}{Bibliography}
+\bibliographystyle{plain}	
+\bibliography{references}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

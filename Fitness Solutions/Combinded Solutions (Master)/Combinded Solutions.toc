@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Monday, August 22, 2016 - Curves}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Exercise \#3 - David J. Bruce}{2}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Complete Code - (Macaulay2)}{3}{subsubsection.1.1.1}
+\contentsline {section}{\numberline {2}Wednesday, August 24, 2016 - Surfaces}{3}{section.2}
+\contentsline {section}{Bibliography}{5}{section*.2}

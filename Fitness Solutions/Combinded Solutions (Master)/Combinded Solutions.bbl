@@ -1,0 +1,16 @@
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{hartshorne-1977}{book}{
+      author={Hartshorne, Robin},
+       title={Algebraic geometry},
+    language={English},
+   publisher={Springer-Verlag},
+     address={New York},
+        date={1977},
+        ISBN={0387902449 3540902449 9783540902447 9780387902449},
+}
+
+\end{biblist}
+\end{bibdiv}
