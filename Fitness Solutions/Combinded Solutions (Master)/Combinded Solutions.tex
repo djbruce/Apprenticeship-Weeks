@@ -69,18 +69,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Titles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
 
 \usepackage{titlesec}								     					% Allows one to use nice section titles
 \titleformat{\section}[block]{\Large\scshape\bfseries\filcenter}{\thesection.}{1em}{}		% Creates section titles
-\titleformat{\subsection}[hang]{\large\scshape\bfseries}{\thesubsection}{1em}{}			% Creates subsection titles
-\titleformat{\subsubsection}[hang]{\large\scshape\bfseries}{\thesubsection}{1em}{}			% Creates subsection titles
+\titleformat{\subsection}[block]{\Large\scshape\bfseries}{\thesubsection}{1em}{}			% Creates subsection titles
+\titleformat{\subsubsection}[hang]{\large\scshape\bfseries}{\thesubsubsection}{1em}{}			% Creates subsection titles
 
-\titleformat{\subsubsubsection}[hang]{\large\scshape\bfseries}{\thesubsection}{1em}{}			% Creates subsection titles
+\titleformat{\paragraph}[hang]{\large\scshape\bfseries}{\theparagraph}{1em}{}			% Creates subsection titles
 
 \usepackage{kpfonts}								    					% This font allows you to use both bold and scshape
 
-\setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ToC and Index %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{afterpage}
@@ -389,7 +390,7 @@
 \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
 \rule{\textwidth}{0.4pt}\\[\baselineskip] % Thin horizontal line
 
-{\LARGE \TitleLecture \\[0.3\baselineskip]\normalsize\textit{Base on problems written by: \Lecturer \\Notes by: \Name}}\\[0.2\baselineskip] % Title
+{\LARGE \TitleLecture \\[0.3\baselineskip]\normalsize\textit{Based on problems written by: \Lecturer \\Notes by: \Name}}\\[0.2\baselineskip] % Title
 
 \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
 \rule{\textwidth}{1.6pt}\\[\baselineskip] % Thick horizontal line
@@ -429,6 +430,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Monday, August 22, 2016 - Curves}
+
+\input{../Curves/ex-2-madeline-brandt/ex-2-madeline-brandt}
 
 \input{../Curves/ex-3-david-j-bruce}
 

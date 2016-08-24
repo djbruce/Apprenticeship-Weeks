@@ -1,7 +1,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
-\subsection{Exercise 2 - Madeline Brandt}
+\subsection{Exercise \#2 - Madeline Brandt}
  
 In this chapter, we study the tropicaliztion of genus 2 curves. Given a genus 2 curve $C$ over a valued field $K$, there is a genus 2 tropical curve we can associate to $C$ uniquely. This is the dual metric graph of the special fiber of a semistable model for $C$, with appropriate edge lengths. This is also the Berkovich skeleton of the Berkovich analytification of $C$.
 It is a nontrivial task compute this tropical curve, and the problem has been studied in the papers \cite{masters} and \cite{section5}, each using a different method. In what follows, we will discuss both methods and provide examples which demonstrate that the two methods yield the same results.
@@ -22,7 +22,7 @@ Given a fixed pair $(\Gamma, w)$, or \emph{combinatorial type}, the moduli space
 
  \begin{figure}[h]
 \centering
-  \includegraphics[width=.5\linewidth]{mgtrop2}
+  \includegraphics[width=.5\linewidth]{../Curves/ex-2-madeline-brandt/mgtrop2}
   \caption{The moduli space $M_2^{tr}$ of genus 2 tropical curves.}
   \label{mgtrop}
 \end{figure}
@@ -46,13 +46,13 @@ M_{\Gamma'} \subset \overline{M_\Gamma} \leftrightarrow \text{there exists a con
 $$
 Combinatorially, we obtain the following pictures. Taking the dual graph of a curve gives an arrow-reversing bijection between the seven combinatorial types of stable curves of genus two and the seven types of vertex-weighted graphs of genus two.
 \begin{center}
-  \includegraphics[width=.9\linewidth]{bijection}
+  \includegraphics[width=.9\linewidth]{../Curves/ex-2-madeline-brandt/bijection}
 \end{center}
 We know that the combinatorial nature of these two moduli spaces is similar, so the natural question to ask is: what is the right way to tie these two spaces together?
 
 \newpage
 \subsubsection{The two methods}
-\subsubsubsection{Method One}
+\paragraph{Method One}
 Our goal is to understand the map
 $$
 M_2 \rightarrow M_2^{tr}.
@@ -123,7 +123,7 @@ $$
  This method for finding the tropical curve takes advantage of the fact that all genus 2 curves are hyperelliptic. This allows us to look at the space of trees on 6 taxa by mapping valuations of the differences of the roots into the tropical Grassmannian. Then, the difficult task is to find the correct scaling factors for the edge lengths in the tropical curve. For this reason, a promising direction for future work would be to study tropicalizations of hyperelliptic curves.
 
 \begin{center}
-  \includegraphics[width=0.9\linewidth]{curvestroptree}
+  \includegraphics[width=0.9\linewidth]{../Curves/ex-2-madeline-brandt/curvestroptree}
 \end{center}
 
 
@@ -152,7 +152,7 @@ Using the tropical Igusa invariants, Helminck's theorem can determine which of t
 
 \subsubsection{Examples}
 
-\subsubsubsection{Two roots coincide}
+\paragraph{Two roots coincide}
 \label{example1}
 
 Suppose exactly two roots coincide in the residue field.
@@ -174,14 +174,14 @@ $$
 So the tree has the desired type, with an interior edge length of $a$. Then, we double this length to find the length of the corresponding loop in the tropical curve.
  \begin{figure}[h]
 \centering
-  \includegraphics[width=.7\linewidth]{ex1.pdf}
+  \includegraphics[width=.7\linewidth]{../Curves/ex-2-madeline-brandt/ex1.pdf}
 \end{figure}
 
 We see that in both cases, we obtained the same result using the two methods.
  
  
  
-\subsubsubsection{A Snowflake}
+\paragraph{A Snowflake}
 
 Consider the polynomial
 $$
@@ -205,6 +205,6 @@ This means that this is a metric for the snowflake with edge length 1 on each in
 
  \begin{figure}[h]
 \centering
-  \includegraphics[width=.75\linewidth]{ex2.pdf}
+  \includegraphics[width=.75\linewidth]{../Curves/ex-2-madeline-brandt/ex2.pdf}
 \end{figure}
 

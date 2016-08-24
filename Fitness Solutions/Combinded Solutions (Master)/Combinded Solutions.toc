@@ -1,5 +1,14 @@
 \contentsline {section}{\numberline {1}Monday, August 22, 2016 - Curves}{2}{section.1}
-\contentsline {subsection}{\numberline {1.1}Exercise \#3 - David J. Bruce}{2}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}Complete Code - (Macaulay2)}{3}{subsubsection.1.1.1}
-\contentsline {section}{\numberline {2}Wednesday, August 24, 2016 - Surfaces}{3}{section.2}
-\contentsline {section}{Bibliography}{5}{section*.2}
+\contentsline {subsection}{\numberline {1.1}Exercise \#2 - Madeline Brandt}{2}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Moduli Space of Tropical Curves}{2}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}The dual graph of a curve}{2}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}The two methods}{5}{subsubsection.1.1.3}
+\contentsline {paragraph}{\numberline {1.1.3.1}Method One}{5}{paragraph.1.1.3.1}
+\contentsline {subsubsection}{\numberline {1.1.4}Method Two}{6}{subsubsection.1.1.4}
+\contentsline {subsubsection}{\numberline {1.1.5}Examples}{7}{subsubsection.1.1.5}
+\contentsline {paragraph}{\numberline {1.1.5.1}Two roots coincide}{7}{paragraph.1.1.5.1}
+\contentsline {paragraph}{\numberline {1.1.5.2}A Snowflake}{8}{paragraph.1.1.5.2}
+\contentsline {subsection}{\numberline {1.2}Exercise \#3 - David J. Bruce}{8}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Complete Code - (Macaulay2)}{9}{subsubsection.1.2.1}
+\contentsline {section}{\numberline {2}Wednesday, August 24, 2016 - Surfaces}{10}{section.2}
+\contentsline {section}{Bibliography}{11}{section*.2}

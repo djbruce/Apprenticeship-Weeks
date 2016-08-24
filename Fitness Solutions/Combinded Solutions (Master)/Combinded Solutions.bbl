@@ -2,14 +2,47 @@
 \begin{bibdiv}
 \begin{biblist}
 
-\bib{hartshorne-1977}{book}{
-      author={Hartshorne, Robin},
-       title={Algebraic geometry},
-    language={English},
-   publisher={Springer-Verlag},
-     address={New York},
-        date={1977},
-        ISBN={0387902449 3540902449 9783540902447 9780387902449},
+\bib{masters}{article}{
+      author={Helminick, Paul~Alexander},
+       title={Tropical igusa invariants and torision embeddings},
+}
+
+\bib{igusa}{article}{
+      author={Igusa, Jun-ichi},
+       title={Arithmetic variety of moduli for genus two},
+        date={1960},
+        ISSN={0003-486X},
+     journal={Ann. of Math. (2)},
+      volume={72},
+       pages={612\ndash 649},
+      review={\MR{0114819}},
+}
+
+\bib{tropicalbook}{book}{
+      author={Maclagan, Diane},
+      author={Sturmfels, Bernd},
+       title={Introduction to tropical geometry},
+      series={Graduate Studies in Mathematics},
+   publisher={American Mathematical Society, Providence, RI},
+        date={2015},
+      volume={161},
+        ISBN={978-0-8218-5198-2},
+      review={\MR{3287221}},
+}
+
+\bib{section5}{article}{
+      author={Ren, Qingchun},
+      author={Sam, Steven~V.},
+      author={Sturmfels, Bernd},
+       title={Tropicalization of classical moduli spaces},
+        date={2014},
+        ISSN={1661-8270},
+     journal={Math. Comput. Sci.},
+      volume={8},
+      number={2},
+       pages={119\ndash 145},
+         url={http://dx.doi.org/10.1007/s11786-014-0185-x},
+      review={\MR{3224624}},
 }
 
 \end{biblist}
