@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 AUG 2016 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 AUG 2016 22:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1622,82 +1622,82 @@ LaTeX Warning: Unused global option(s):
 (./Combinded Solutions.aux)
 \openout1 = `"Combinded Solutions.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 424.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 424.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 427.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 427.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 424.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 424.
-LaTeX Font Info:    ... okay on input line 424.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 424.
-LaTeX Font Info:    ... okay on input line 424.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 424.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 424.
+LaTeX Font Info:    ... okay on input line 427.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 427.
+LaTeX Font Info:    ... okay on input line 427.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 427.
+LaTeX Font Info:    ... okay on input line 427.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 427.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 427.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 424.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 424.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 424.
+LaTeX Font Info:    ... okay on input line 427.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 427.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 427.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 424.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 424.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 424
+LaTeX Font Info:    ... okay on input line 427.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 427.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 427
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 424.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 424.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 424.
+LaTeX Font Info:    ... okay on input line 427.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 427.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 427.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 424.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 424.
-LaTeX Font Info:    ... okay on input line 424.
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 424.
+LaTeX Font Info:    ... okay on input line 427.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 427.
+LaTeX Font Info:    ... okay on input line 427.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 427.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Try loading font information for U+jkpsya on input line 424
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 427
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 424
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 427
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 424.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 427.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 424
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 427
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 424
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 427
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
@@ -1758,9 +1758,9 @@ File: ujkpsyc.fd 2006/08/15 v1.0
 )
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 424.
+(lastpage)             ! on input line 427.
 \AtBeginShipoutBox=\box76
-Package hyperref Info: Link coloring ON on input line 424.
+Package hyperref Info: Link coloring ON on input line 427.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1769,9 +1769,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count286
 )
-LaTeX Info: Redefining \ref on input line 424.
-LaTeX Info: Redefining \pageref on input line 424.
-LaTeX Info: Redefining \nameref on input line 424.
+LaTeX Info: Redefining \ref on input line 427.
+LaTeX Info: Redefining \pageref on input line 427.
+LaTeX Info: Redefining \nameref on input line 427.
 
 (./Combinded Solutions.out) (./Combinded Solutions.out)
 \@outlinefile=\write7
@@ -1782,14 +1782,14 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.13} (current compat level: 1.7).
 
-Package xypdf Info: Line width: 0.5pt on input line 424.
+Package xypdf Info: Line width: 0.5pt on input line 427.
 (./Combinded Solutions.toc)
 \tf@toc=\write8
 \openout8 = `"Combinded Solutions.toc"'.
 
  [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (../
 Curves/ex-2-madeline-brandt/ex-2-madeline-brandt.tex
-<../Curves/ex-2-madeline-brandt/mgtrop2.jpg, id=111, 1359.0775pt x 1221.56375pt
+<../Curves/ex-2-madeline-brandt/mgtrop2.jpg, id=140, 1359.0775pt x 1221.56375pt
 >
 File: ../Curves/ex-2-madeline-brandt/mgtrop2.jpg Graphic file (type jpg)
  <use ../Curves/ex-2-madeline-brandt/mgtrop2.jpg>
@@ -1806,7 +1806,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--38
  []
 
 [2]
-<../Curves/ex-2-madeline-brandt/bijection.jpg, id=128, 2556.55125pt x 1645.1462
+<../Curves/ex-2-madeline-brandt/bijection.jpg, id=157, 2556.55125pt x 1645.1462
 6pt>
 File: ../Curves/ex-2-madeline-brandt/bijection.jpg Graphic file (type jpg)
  <use ../Curves/ex-2-madeline-brandt/bijection.jpg>
@@ -1841,7 +1841,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--109
  []
 
 [5]
-<../Curves/ex-2-madeline-brandt/curvestroptree.jpg, id=150, 505.89pt x 361.35pt
+<../Curves/ex-2-madeline-brandt/curvestroptree.jpg, id=180, 505.89pt x 361.35pt
 >
 File: ../Curves/ex-2-madeline-brandt/curvestroptree.jpg Graphic file (type jpg)
 
@@ -1857,7 +1857,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--165
 
  []
 
-<../Curves/ex-2-madeline-brandt/ex1.pdf, id=159, 3029.67944pt x 1177.76216pt>
+<../Curves/ex-2-madeline-brandt/ex1.pdf, id=189, 3029.67944pt x 1177.76216pt>
 File: ../Curves/ex-2-madeline-brandt/ex1.pdf Graphic file (type pdf)
 
 <use ../Curves/ex-2-madeline-brandt/ex1.pdf>
@@ -1869,7 +1869,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 192--194
 
  []
 
-<../Curves/ex-2-madeline-brandt/ex2.pdf, id=178, 2547.45477pt x 1102.7729pt>
+<../Curves/ex-2-madeline-brandt/ex2.pdf, id=207, 2547.45477pt x 1102.7729pt>
 File: ../Curves/ex-2-madeline-brandt/ex2.pdf Graphic file (type pdf)
 
 <use ../Curves/ex-2-madeline-brandt/ex2.pdf>
@@ -1884,33 +1884,43 @@ LaTeX Font Info:    Try loading font information for OT1+jkptt on input line 47
 (/usr/local/texlive/2016/texmf-dist/tex/latex/kpfonts/ot1jkptt.fd
 File: ot1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for OT1/jkptt.
 ))
+(../Surfaces/ex-9-kastner.tex [9] [10])
 No file "Combinded Solutions".ind.
-[9] [10] (./Combinded Solutions.bbl) 
+[11] [12
+
+
+] (./Combinded Solutions.bbl) 
 AED: lastpage setting LastPage
-[11
-
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 451.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 451.
+[13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 456.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 456.
  (./Combinded Solutions.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 451.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 451.
-Package rerunfilecheck Info: File `"Combinded Solutions".out' has not changed.
-(rerunfilecheck)             Checksum: 5746E463479DEE6A79E6B59F90D2A9A6;1050.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 456.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 456.
 
+
+Package rerunfilecheck Warning: File `"Combinded Solutions".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"Combinded Solutions".out':
+(rerunfilecheck)             Before: C10A49F4CE1412D55D6088F098CF05D0;1446
+(rerunfilecheck)             After:  164C5D17EA3043DFEB1AD012C3BFD1C0;1446.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.43996pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 451.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 456.
  ) 
 Here is how much of TeX's memory you used:
- 35673 strings out of 493014
- 813462 string characters out of 6133351
- 1048801 words of memory out of 5000000
- 38236 multiletter control sequences out of 15000+600000
- 60064 words of font info for 138 fonts, out of 8000000 for 9000
+ 35703 strings out of 493014
+ 813830 string characters out of 6133351
+ 1049841 words of memory out of 5000000
+ 38247 multiletter control sequences out of 15000+600000
+ 60835 words of font info for 140 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  56i,15n,82p,1038b,1052s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/t
@@ -1926,11 +1936,12 @@ pe1/public/kpfonts/jkpmne.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
 ublic/kpfonts/jkpmsc8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
 ic/kpfonts/jkpsy.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/kpf
 onts/jkpsyb.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/kpfonts/
-jkpttmn8a.pfb>
-Output written on "Combinded Solutions.pdf" (11 pages, 1075781 bytes).
+jkpsyc.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/kpfonts/jkptt
+mn8a.pfb>
+Output written on "Combinded Solutions.pdf" (13 pages, 1088905 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 190 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 317 PDF objects out of 1000 (max. 8388607)
+ 271 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 230 words of extra memory for PDF output out of 10000 (max. 10000000)
 

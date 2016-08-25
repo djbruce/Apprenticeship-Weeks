@@ -1,0 +1,117 @@
+\documentclass[a4paper, DIV=12]{scrreprt}
+
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+
+
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newtheorem*{theorem}{Theorem}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\td}{td}
+\DeclareMathOperator{\Pic}{Pic}
+
+
+\begin{document}
+\begin{center}
+\LARGE{Solution to problem 9 of 2016-08-24}
+
+\vspace{.5cm}
+
+\large{Barbara Bolognese\\Lars Kastner\\Julie Rana}
+\end{center}
+
+
+\section*{Problem}
+State the \textit{Hodge Index Theorem}. Verify this theorem for cubic surfaces
+in $\PP^3$, by explicitly computing the matrix for the intersection pairing.
+
+
+\section*{Answer}
+
+\subsection*{Statement}
+\begin{theorem}
+The signature of the intersection pairing on $H^2(X,\RR)$ equals $\sum_{p,q}(-1)^ph^{p,q}(X)$.
+\end{theorem}
+
+Explanation: If the the pairing is given by a symmetric matrix $A$, then the
+signature equals the number of positive eigenvalues minus the number of
+negative eigenvalues.
+
+\subsection*{Hodge diamond}
+To verify this theorem, we will compute the Hodge diamond of a cubic surface $X$.
+\[
+\begin{array}{ccccc}
+&&h^{00}&&\\
+& h^{10} && h^{01} & \\
+h^{20} && h^{11} && h^{02}\\
+& h^{21} && h^{12} & \\
+&&h^{22}&&\\
+\end{array}
+\]
+We have the following symmetries:
+\begin{enumerate}
+\item $h^{pq}=h^{n-q,n-p}$ because of Serre duality.
+\item $h^{pq}=h^{qp}$ because $H^{pq}(X)$ is the complex conjugate $H^{qp}(X)$.
+\end{enumerate}
+So we just need to compute the upper left triangle of the Hodge diamond.
+\begin{itemize}
+\item[$h^{00}$:] We have $h^{00}=h^0(X,\OO_X)=1$, since $X$ is compact connected.
+\item[$h^{01}$:] $h^{01}$ is zero, because the Lefschetz hyperplane theorem implies that a hypersurface in $\PP^n$ is simply connected, hence its first homology/cohomology group is also zero. Therefore $0=b_1(X)=2h^{01}$.
+\item[$h^{02}$:] Since $\bigwedge^2\Omega_X=\omega_X$, we want to know $h^0(X,\omega_X)$ (use symmetry). Using the adjunction formula we obtain
+\[
+\omega_X\cong (\omega_{\PP^3}\otimes \OO(X))|_{X}\cong \OO_X(-1),
+\]
+since $\omega_{\PP^3}\cong\OO(-4)$ and $X$ has degree $3$. But $\OO_X(-1)$ does not have any global sections, so $h^{02}=0$.
+\item[$h^{11}$:] We have $\chi_{top}(X)=\sum_{i=0}^4(-1)^{i+1}b_i$. The $b_i$ are sums of the Hodge numbers, namely the rows in the Hodge diamond. Inserting the known numbers, we obtain
+\[
+\chi_{top}(X)\ =\ h^{11} + 2.
+\]
+There are two ways to compute the holomorphic Euler characteristic $\chi(\OO_X)$, the second way involves $\chi_{top}(X)$.
+\begin{enumerate}
+\item 
+\[
+1=\chi(\OO_X)=h^0(\OO_X)-h^1(\OO_X) + h^2(\OO_X) = h^{00} - h^{01} + h^{02} = h^2(X,\OO_X).
+\]
+\item 
+\begin{align*}
+\chi(\OO_X) = \int_X\ch(\OO_X)\td(\OO_X)\\
+=\int_X(1,0,0)(1,\frac{c_1(X)}{2},\frac{c_1^2(X) + c_2(X)}{12}) = \int_X\frac{c_1^2(X) + c_2(X)}{12}\\
+=\frac{1}{12}(K_X^2+\chi_{top}(X)).
+\end{align*}
+We have $K_X=-H$ for $H$ a hyperplane section and hence $K_X^2=3$.
+\end{enumerate}
+This yields $\chi_{top}(X)=9$ and hence $h^{11}=7$.
+\end{itemize}
+This gives the Hodge diamond
+\[
+\begin{array}{ccccc}
+&&1&&\\
+& 0 && 0 & \\
+0 && 7 && 0\\
+& 0 && 0 & \\
+&&1&&\\
+\end{array}
+\]
+and for the signature we get $-5$. Denote by $a$ the number of positive eigenvalues of $A$ and by $b$ the number of negative eigenvalues of $A$. We now have the following two equations
+\[
+a-b = -5\ \mbox{ and }\ a+b = 7.
+\]
+Thus $a=1$ and $b=6$.
+
+\subsection*{Intersection pairing}
+Every cubic surface can be given as the blowup of $\PP^2$ in six points. Hartshorne Prop 4.8 explicitly gives a basis for $\Pic(X)$. Using this basis, the intersection form is:
+\[
+\left(
+\begin{array}{ccccccc}
+1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & -1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & -1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & -1 \\
+\end{array}
+\right)
+\]
+\end{document}
