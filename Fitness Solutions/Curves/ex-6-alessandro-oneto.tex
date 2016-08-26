@@ -1,0 +1,73 @@
+
+\subsection{Exercise \#9 - Alessandro Oneto}
+
+\begin{defn}
+ An {\it Elliptic Normal Curve} is a smooth non-degenerate genus $1$ curve of degree $n$ in $\P^{n-1}$.
+\end{defn}
+
+In the case of Rational Normal Curves it is classically known that the equations of the curve and its secant varieties\footnote{The $s$-th secant variety of a projective variety $X$ is defined as the Zariski closure of the union of all possible secant $(s-1)$-planes, spanned by $s$ points on $X$. It is denoted by $\sigma_s(X)$.} are obtained as minors of Hankel matrices \cite[Theorem 9.7]{harris-1992}. It was classically known also that the equations for the Elliptic Normal quintic in $\P^4$ are given by the $4\times 4$ minors of an alternating matrix of linear forms; see \cite[Lemma 4.4(i)]{ADHPR} and the references due to classic works by Bianchi \cite{bianchi-1880} and Klein \cite{KleinENC}. In a more recent work \cite{FisherENC}, Fisher generalizes this construction by giving the equations of Elliptic Normal Curves of odd degree and their secant varieties as Pfaffians of an alternating matrices.
+
+\begin{defn}
+ Let $n \geq 3$ be an odd integer and let $C$ be a Elliptic Normal Curve in $\P^n$. Then, a {\it Klein matrix} $\Phi$ for $C$ is a $n\times n$ alternating matrix of linear forms\footnote{A matrix is called {\it alternating} if skew-symmetric and with zeroes on the diagonal}, such that:
+ \begin{itemize}
+  \item[(i.)] the matrix $\Phi$ has rank at most $2$ over $C$;
+  \item[(ii.)] the $n$ submaximal Pfaffians\footnote{Given a skew-symmetric $A$ square matrix of size $n$, its determinant can be represented as a square. The square root of it is called the {\it Pfaffian} of the matrix. Considering all submatrices of $A$ obtained by erasing the same row and column, we have $n$ skew-symmetric matrices of size $n-1$. Their Pfaffians are called {\it submaximal Pfaffians} of $A$. More in general, for any $m \leq n$, we can consider the skew-symmetric submatrices of $A$ and define the {\it Pfaffians of order $m$} of $A$.} of $\Phi$ are linearly independent.
+ \end{itemize}
+\end{defn}
+
+The main Fisher's results are the following.
+
+\begin{theorem}{\rm \cite[Theorem 1.2 and Theorem 1.3]{FisherENC}} Let $n\geq 3$ be a odd integer.
+ \begin{itemize}
+  \item[{\rm (i.)}] Let $C$ be an Elliptic Normal Curve of degree $n\geq 2s+2$ with Klein matrix $\Phi$. Then, the $s$-th secant variety $\sigma_s(C)$ is defined by the Pfaffians of size $2s+2$ of $\Phi$.
+  
+  \item[{\rm (ii.)}] Every Elliptic Normal Curve admits a Klein matrix and it is unique.
+ \end{itemize}
+\end{theorem}
+
+In in his paper, he also describe an algorithm that, given the ideal of an Elliptic Normal Curve, allows to compute the corresponding Klein matrix and, therefore,  the equations of its secant varieties.
+
+\subsubsection{Elliptic Normal Quintic} In the case of Elliptic Normal Quintic, the situation is very easy.
+
+\begin{prop}{\rm \cite[Proposition 1.4]{FisherENC}} A generic $5 \times 5$ alternating matrix of linear forms on $\P^4$ is a Klein matrix for an Elliptic Normal Quintic.
+\end{prop}
+
+\noindent Let's compute with \texttt{Macaulay2} the ideal obtained by considering the Pfaffians of size $4$ of a $5 \times 5$ skew-symmetric matrix of random linear forms in $\P^4$. We also check that we obtain an Elliptic Normal Curve.
+\begin{verbatim}
+i1 : S = QQ[x_0..x_4];
+
+i2 : L = for i from 0 to 3 list (for j from (i+1) to 4 list random(1,S));
+
+i3 : M = matrix{
+     		{ sub(0,S), L_0_0, L_0_1, L_0_2, L_0_3},
+     		{ -L_0_0, sub(0,S), L_1_0, L_1_1, L_1_2},
+     		{ -L_0_1, -L_1_0, sub(0,S), L_2_0, L_2_1},
+     		{ -L_0_2, -L_1_1, -L_2_0, sub(0,S), L_3_0},
+     		{ -L_0_3, -L_1_2, -L_2_1, -L_3_0, sub(0,S)}
+     		};
+             5       5
+o3 : Matrix S  <--- S
+
+i4 : I = pfaffians(4,M);
+o4 : Ideal of S
+
+i5 : C = Proj(S/I)
+o5: ProjectiveVariety
+
+i6 : dim C
+o6 = 1
+
+i7 : degree C
+o7 = 5
+
+i8 : genus C
+o8 = 1
+
+i9 : singularLocus C
+          S
+o9 = Proj(-)
+          1
+o9 : ProjectiveVariety
+\end{verbatim}
+
+\subsubsection{Line secant variety of Elliptic Normal Septic} -- AN EXAMPLE OF A SEPTIC WHERE WE CAN COMPUTE THE EQUATIONS OF THE LINE SECANT VARIETY --
